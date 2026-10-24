@@ -1,1 +1,880 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Radhu ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --pink: #ff6f91;
+        --rose: #ff4f78;
+        --cream: #fff8f5;
+        --ink: #3d2730;
+        --muted: #806b72;
+        --white: #fff;
+        --shadow: 0 20px 60px rgba(104, 49, 67, 0.12);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+        overflow-x: hidden;
+      }
+      button {
+        font: inherit;
+      }
+      .hero {
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(
+          circle at 50% 30%,
+          #fff 0,
+          #fff4f6 38%,
+          #ffe9ef 100%
+        );
+      }
+      .hero:before,
+      .hero:after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(2px);
+        opacity: 0.45;
+      }
+      .hero:before {
+        width: 420px;
+        height: 420px;
+        background: #ffd0dc;
+        top: -160px;
+        left: -160px;
+      }
+      .hero:after {
+        width: 360px;
+        height: 360px;
+        background: #ffc3d3;
+        right: -140px;
+        bottom: -130px;
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+      }
+      .kicker {
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--rose);
+        margin-bottom: 18px;
+      }
+      .script {
+        font-family: "Great Vibes", cursive;
+        font-weight: 400;
+      }
+      .hero h1 {
+        font-size: clamp(4rem, 12vw, 8.5rem);
+        line-height: 0.9;
+        color: var(--rose);
+        margin-bottom: 20px;
+      }
+      .hero h2 {
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        font-weight: 500;
+        margin-bottom: 30px;
+      }
+      .hero p {
+        max-width: 650px;
+        margin: auto;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .btn {
+        border: 0;
+        border-radius: 999px;
+        padding: 15px 24px;
+        background: var(--rose);
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 12px 30px rgba(255, 79, 120, 0.25);
+        transition: 0.25s;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 36px rgba(255, 79, 120, 0.32);
+      }
+      .scroll {
+        margin-top: 42px;
+        font-size: 0.85rem;
+        color: var(--muted);
+        animation: bob 1.8s infinite;
+      }
+      @keyframes bob {
+        50% {
+          transform: translateY(7px);
+        }
+      }
+      .section {
+        padding: 100px 20px;
+      }
+      .container {
+        width: min(1100px, 100%);
+        margin: auto;
+      }
+      .center {
+        text-align: center;
+      }
+      .section-tag {
+        color: var(--rose);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+      .section-title {
+        font-size: clamp(2rem, 5vw, 3.8rem);
+        line-height: 1.05;
+        margin-bottom: 16px;
+      }
+      .section-intro {
+        max-width: 700px;
+        margin: 0 auto 50px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .story {
+        display: grid;
+        gap: 70px;
+      }
+      .chapter {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+      .chapter:nth-child(even) .photo {
+        order: 2;
+      }
+      .photo {
+        height: 520px;
+        border-radius: 28px;
+        overflow: hidden;
+        background: #f6dfe5;
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .photo.placeholder {
+        display: grid;
+        place-items: center;
+        padding: 30px;
+        text-align: center;
+        color: #9b777f;
+        background: linear-gradient(135deg, #ffe9ef, #f8dbe3);
+      }
+      .photo.placeholder strong {
+        display: block;
+        color: var(--rose);
+        font-size: 1.15rem;
+        margin-bottom: 7px;
+      }
+      .chapter-copy .num {
+        color: #ff9ab1;
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+      }
+      .chapter-copy h3 {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        margin: 12px 0 18px;
+      }
+      .chapter-copy p {
+        color: var(--muted);
+        line-height: 1.9;
+        font-size: 1.02rem;
+      }
+      .note {
+        margin-top: 22px;
+        padding: 18px 20px;
+        border-left: 3px solid var(--rose);
+        background: #fff;
+        border-radius: 0 16px 16px 0;
+        color: #654a53;
+        line-height: 1.7;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .card {
+        background: white;
+        border-radius: 22px;
+        padding: 10px;
+        box-shadow: var(--shadow);
+        transition: 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-6px) rotate(0.3deg);
+      }
+      .card img,
+      .card .placeholder {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+      .card .placeholder {
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 18px;
+        background: #ffe8ee;
+        color: #8d6972;
+      }
+      .card figcaption {
+        padding: 15px 8px 10px;
+        line-height: 1.5;
+        color: #6e555d;
+      }
+      .letter {
+        background: #fff;
+        border-radius: 30px;
+        padding: clamp(28px, 6vw, 65px);
+        box-shadow: var(--shadow);
+        max-width: 900px;
+        margin: auto;
+      }
+      .letter p {
+        color: #614b52;
+        line-height: 2;
+        font-size: 1.04rem;
+        margin-bottom: 18px;
+      }
+      .letter .signature {
+        font-size: 2.2rem;
+        color: var(--rose);
+        margin-top: 25px;
+      }
+      .video-box {
+        background: #2d1d23;
+        border-radius: 28px;
+        padding: 12px;
+        box-shadow: var(--shadow);
+        max-width: 900px;
+        margin: auto;
+      }
+      .video-box video {
+        width: 100%;
+        display: block;
+        border-radius: 20px;
+        max-height: 650px;
+        background: #1e1518;
+      }
+      .video-help {
+        color: #8d767d;
+        text-align: center;
+        margin-top: 14px;
+        font-size: 0.85rem;
+      }
+      .final {
+        min-height: 70vh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        background: linear-gradient(145deg, #ffedf2, #fff8f5);
+      }
+      .final h2 {
+        font-size: clamp(2.7rem, 8vw, 6rem);
+        line-height: 1.05;
+        color: var(--rose);
+      }
+      .final p {
+        max-width: 650px;
+        margin: 22px auto 30px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      footer {
+        padding: 25px;
+        text-align: center;
+        color: #9b7e87;
+        font-size: 0.8rem;
+      }
+      .floating-heart {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        width: 52px;
+        height: 52px;
+        border: 0;
+        border-radius: 50%;
+        background: white;
+        color: var(--rose);
+        font-size: 1.35rem;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        z-index: 10;
+      }
+      .confetti {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 99;
+      }
+      .confetti i {
+        position: absolute;
+        width: 9px;
+        height: 16px;
+        top: -30px;
+        animation: fall 3.5s linear forwards;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(110vh) rotate(720deg);
+          opacity: 0;
+        }
+      }
 
+      /* --- Responsive photo system --- */
+      .photo.image-frame {
+        padding: 0;
+        display: block;
+        background: #f6dfe5;
+      }
+      .photo.image-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
+      .gallery .card {
+        cursor: zoom-in;
+        overflow: hidden;
+      }
+      .gallery .card img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+      .gallery-photo {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        border-radius: 16px;
+        background: #ffe8ee;
+      }
+      .gallery-photo img {
+        transition: transform .45s ease;
+      }
+      .gallery .card:hover .gallery-photo img {
+        transform: scale(1.045);
+      }
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: none;
+        place-items: center;
+        padding: 24px;
+        background: rgba(31, 16, 22, .88);
+        backdrop-filter: blur(8px);
+      }
+      .lightbox.open { display: grid; }
+      .lightbox img {
+        max-width: min(94vw, 1100px);
+        max-height: 88vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 18px;
+        box-shadow: 0 30px 90px rgba(0,0,0,.35);
+      }
+      .lightbox-close {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(255,255,255,.92);
+        color: #ff4f78;
+        font-size: 1.7rem;
+        line-height: 1;
+        cursor: pointer;
+      }
+      .lightbox-caption {
+        position: absolute;
+        left: 50%;
+        bottom: 22px;
+        transform: translateX(-50%);
+        width: min(90vw, 700px);
+        text-align: center;
+        color: white;
+        font-size: .95rem;
+      }
+      @media (max-width: 760px) {
+        .photo.image-frame { height: 390px; }
+        .lightbox { padding: 12px; }
+        .lightbox img { max-width: 96vw; max-height: 82vh; }
+      }
+      @media (max-width: 460px) {
+        .photo.image-frame { height: 330px; }
+        .lightbox-close { top: 12px; right: 12px; }
+      }
+
+      @media (max-width: 760px) {
+        .section {
+          padding: 75px 16px;
+        }
+        .chapter {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+        .chapter:nth-child(even) .photo {
+          order: 0;
+        }
+        .photo {
+          height: 390px;
+        }
+        .gallery {
+          grid-template-columns: 1fr 1fr;
+        }
+        .card:last-child {
+          grid-column: span 2;
+        }
+      }
+      @media (max-width: 460px) {
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+        .card:last-child {
+          grid-column: auto;
+        }
+        .photo {
+          height: 330px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="kicker">
+          25 October • A little corner of my heart, just for you
+        </div>
+        <h1 class="script">Happy Birthday, Radhu ❤️</h1>
+        <h2>For mera bcha, meri jaan &amp; meri cutueeeeeeiiiiii.</h2>
+        <p>
+          Some people become memories. Some become a home. Somehow, you became my whole world
+        </p>
+        <button
+          class="btn"
+          onclick="
+            document
+              .getElementById('story')
+              .scrollIntoView({ behavior: 'smooth' })
+          "
+        >
+          Open our little story ✨
+        </button>
+        <div class="scroll">↓ keep scrolling, birthday girl</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="story">
+        <div class="container">
+          <div class="center">
+            <div class="section-tag">Chapter one</div>
+            <h2 class="section-title">Mai thonu apni story dsna chahna, so lets start!!</h2>
+            <p class="section-intro">
+              mai kise ikk date nal ni shuru krna chahnda , mai kise ikk moment nl ni shuru krna chahnda bcz thode nl bitaya hrr moment merelyi boht special hai. but a good gesture from my side. chloooooooooo!
+            </p>
+          </div>
+          <div class="story">
+            <article class="chapter">
+              <div class="photo image-frame"><img src="assets/firstphoto.jpeg" alt="Our first memory"></div>
+              <div class="chapter-copy">
+                <span class="num">01 — THE BEGINNING</span>
+                <h3>And then there was us.</h3>
+                <p>
+                  There wasn't some dramatic announcement that our story had
+                  begun. It was simply a collection of moments that kept making
+                  me want one more conversation, one more laugh, one more memory
+                  with you.
+                </p>
+                <div class="note">
+                  “Somehow, ordinary days started feeling special when you were
+                  in them.”
+                </div>
+              </div>
+            </article>
+
+            <article class="chapter">
+              <div class="photo image-frame"><img src="assets/photo02.jpeg" alt="Our cute moment"></div>
+              <div class="chapter-copy">
+                <span class="num">02 — THE CUTE PART</span>
+                <h3>The kind of cute only we understand.</h3>
+                <p>
+                  Our stupid jokes, our random expressions, the way we can turn
+                  absolutely nothing into something worth remembering. We are,
+                  honestly, two same-same idiots—and I wouldn't change that.
+                </p>
+                <div class="note">
+                  “Same brain. Same stupidity. Somehow, my favourite
+                  combination.”
+                </div>
+              </div>
+            </article>
+
+            <article class="chapter">
+              <div class="photo image-frame"><img src="assets/photo03.jpeg" alt="Our special kiss"></div>
+              <div class="chapter-copy">
+                <span class="num">03 — THAT MOMENT</span>
+                <h3>The kiss I'll always remember.</h3>
+                <p>
+                  Some moments don't need a long explanation. They just stay.
+                  That little moment between us felt like the world had gone
+                  quiet for a second—and I was exactly where I wanted to be.
+                </p>
+                <div class="note">“One tiny moment. A thousand feelings.”</div>
+              </div>
+            </article>
+
+            <article class="chapter">
+              <div class="photo image-frame"><img src="assets/photo04.jpeg" alt="Our hug"></div>
+              <div class="chapter-copy">
+                <span class="num">04 — THE HUG</span>
+                <h3>Your hugs feel like home.</h3>
+                <p>
+                  There are hugs that are just hugs, and then there are the ones
+                  where you don't want to let go. Yours somehow make everything
+                  feel a little quieter, softer, and better.
+                </p>
+                <div class="note">
+                  “If I could pause one feeling, it would probably be this one.”
+                </div>
+              </div>
+            </article>
+
+            <article class="chapter">
+              <div class="photo image-frame"><img src="assets/photo05.jpeg" alt="Our silly memory"></div>
+              <div class="chapter-copy">
+                <span class="num">05 — OUR CHAOS</span>
+                <h3>We are ridiculously unserious.</h3>
+                <p>
+                  And honestly? Good. Life already takes itself too seriously.
+                  I'm glad I have someone with whom I can be completely stupid,
+                  laugh at the dumbest things and create memories that make no
+                  sense to anyone else.
+                </p>
+                <div class="note">
+                  “Normal is overrated. Give me our chaos.”
+                </div>
+              </div>
+            </article>
+
+            <article class="chapter">
+              <div class="photo image-frame"><img src="assets/photo06.jpeg" alt="A beautiful memory"></div>
+              <div class="chapter-copy">
+                <span class="num">06 — MY FAVOURITE VIEW</span>
+                <h3>Still can't believe you're mine to love.</h3>
+                <p>
+                  Sometimes I look at your photos and think about how lucky I am
+                  to know the person behind that smile. You're beautiful,
+                  yes—but it's the little things about you that stay with me the
+                  most.
+                </p>
+                <div class="note">
+                  “Pretty face, prettier heart. And yes, I had to say it.”
+                </div>
+              </div>
+            </article>
+
+            <article class="chapter">
+              <div class="photo image-frame"><img src="assets/photo08.jpeg" alt="Our outing memory"></div>
+              <div class="chapter-copy">
+                <span class="num">07 — OUTSIDE OUR LITTLE WORLD</span>
+                <h3>Everywhere feels better with you.</h3>
+                <p>
+                  Whether it was a proper plan or one of those random moments
+                  that somehow became a memory, I love how easily you make a
+                  place feel familiar.
+                </p>
+              </div>
+            </article>
+
+            <article class="chapter">
+              <div class="photo image-frame"><img src="assets/photo07.jpeg" alt="A candid memory"></div>
+              <div class="chapter-copy">
+                <span class="num">08 — THE REAL YOU</span>
+                <h3>The candid moments are my favourites.</h3>
+                <p>
+                  Not the perfectly posed ones. The laughing ones. The
+                  distracted ones. The ones where you're simply being you. Those
+                  are the moments I want to remember forever.
+                </p>
+              </div>
+            </article>
+
+            <article class="chapter">
+              <div class="photo image-frame"><img src="assets/photo09.jpeg" alt="Our favourite couple photo"></div>
+              <div class="chapter-copy">
+                <span class="num">09 — US</span>
+                <h3>My favourite picture has two people in it.</h3>
+                <p>
+                  Because when I see us together, I don't just see a photograph.
+                  I see everything behind it—the conversations, the laughs, the
+                  little fights, the making-up, the hugs, and the love.
+                </p>
+                <div class="note">
+                  “This isn't just a photo. It's a tiny piece of our story.”
+                </div>
+              </div>
+            </article>
+
+            <article class="chapter">
+              <div class="photo image-frame"><img src="assets/photo10.jpeg" alt="Our most special photo"></div>
+              <div class="chapter-copy">
+                <span class="num">10 — MY FAVOURITE CHAPTER</span>
+                <h3>And I hope this isn't the last page.</h3>
+                <p>
+                  Ten photos are nowhere near enough. There are too many moments
+                  I want to keep, too many places I want to see with you, and
+                  way too many memories still waiting for us.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="background: #fff">
+        <div class="container">
+          <div class="center">
+            <div class="section-tag">A little gallery</div>
+            <h2 class="section-title">10 little pieces of us.</h2>
+            <p class="section-intro">
+              The same 10 photos are used here in a responsive gallery. Tap any photo to open it full-screen.
+            </p>
+          </div>
+          <div class="gallery">
+            <figure class="card" onclick="openLightbox(this)">
+              <div class="gallery-photo"><img src="assets/firstphoto.jpeg" alt="Photo 01" loading="lazy"></div>
+              <figcaption>
+                “The beginning of one of my favourite stories.”
+              </figcaption>
+            </figure>
+            <figure class="card" onclick="openLightbox(this)">
+              <div class="gallery-photo"><img src="assets/photo02.jpeg" alt="Photo 02" loading="lazy"></div>
+              <figcaption>“My favourite kind of stupid.”</figcaption>
+            </figure>
+            <figure class="card" onclick="openLightbox(this)">
+              <div class="gallery-photo"><img src="assets/photo03.jpeg" alt="Photo 03" loading="lazy"></div>
+              <figcaption>“That little moment I still replay.”</figcaption>
+            </figure>
+            <figure class="card" onclick="openLightbox(this)">
+              <div class="gallery-photo"><img src="assets/photo04.jpeg" alt="Photo 04" loading="lazy"></div>
+              <figcaption>“The hug I never want to end.”</figcaption>
+            </figure>
+            <figure class="card" onclick="openLightbox(this)">
+              <div class="gallery-photo"><img src="assets/photo05.jpeg" alt="Photo 05" loading="lazy"></div>
+              <figcaption>“Us being completely unserious.”</figcaption>
+            </figure>
+            <figure class="card" onclick="openLightbox(this)">
+              <div class="gallery-photo"><img src="assets/photo06.jpeg" alt="Photo 06" loading="lazy"></div>
+              <figcaption>“How are you this pretty?”</figcaption>
+            </figure>
+            <figure class="card" onclick="openLightbox(this)">
+              <div class="gallery-photo"><img src="assets/photo07.jpeg" alt="Photo 07" loading="lazy"></div>
+              <figcaption>“A day made better by you.”</figcaption>
+            </figure>
+            <figure class="card" onclick="openLightbox(this)">
+              <div class="gallery-photo"><img src="assets/photo08.jpeg" alt="Photo 08" loading="lazy"></div>
+              <figcaption>“The real, unfiltered you.”</figcaption>
+            </figure>
+            <figure class="card" onclick="openLightbox(this)">
+              <div class="gallery-photo"><img src="assets/photo09.jpeg" alt="Photo 09" loading="lazy"></div>
+              <figcaption>“My favourite team: us.”</figcaption>
+            </figure>
+            <figure class="card" onclick="openLightbox(this)">
+              <div class="gallery-photo"><img src="assets/photo10.jpeg" alt="Photo 10" loading="lazy"></div>
+              <figcaption>“A memory I want to keep forever.”</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="letter">
+            <div class="section-tag">From me to you</div>
+            <h2 class="section-title">For my bache, with all my heart.</h2>
+            <p>Happy birthday, meri jaan. ❤️</p>
+            <p>
+              I hope this year gives you everything your heart quietly wishes
+              for. I hope you laugh more, smile more, feel proud of yourself
+              more, and never forget just how special you are.
+            </p>
+            <p>
+              Thank you for being the person with whom I can be completely
+              myself. Thank you for the cute moments, the silly moments, the
+              hugs, the memories, and even the little moments when we drive each
+              other crazy.
+            </p>
+            <p>
+              I know I am not perfect. Sometimes I can be difficult, sometimes I
+              overthink, sometimes I mess things up—but underneath all of that
+              is someone who genuinely cares about you more than he can properly
+              put into words.
+            </p>
+            <p>
+              So today, I don't just want to wish you a happy birthday. I want
+              to wish you a beautiful life. And selfishly, I hope I get to be
+              there for a lot of it—making you laugh, annoying you, hugging you,
+              taking terrible pictures, and creating many more chapters
+              together.
+            </p>
+            <p>
+              Happy birthday to my Radhu, my mere bache, my jaan, my
+              cutueeeeeeiiiiii. ❤️
+            </p>
+            <div class="signature script">Always yours, ❤️</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 30px">
+        <div class="container">
+          <div class="center">
+            <div class="section-tag">One last thing</div>
+            <h2 class="section-title">Press play. This one is ours. 🎬</h2>
+            <p class="section-intro">
+              Add your video as <b>our-video.mp4</b> inside the assets folder.
+            </p>
+          </div>
+          <div class="video-box">
+            <video controls playsinline poster="assets/video-poster.jpg">
+              <source src="assets/our-video.mp4" type="video/mp4" />
+              Your browser does not support this video.
+            </video>
+          </div>
+          <div class="video-help">
+            Tip: use a horizontal or vertical MP4—both are supported.
+          </div>
+        </div>
+      </section>
+
+      <section class="final">
+        <div class="container">
+          <div
+            class="script"
+            style="font-size: clamp(3.2rem, 10vw, 7rem); color: #ff4f78"
+          >
+            Happy Birthday, Radhu ❤️
+          </div>
+          <p>
+            Here's to another year of you being you—and another year of us
+            collecting tiny moments that somehow become everything.
+          </p>
+          <button class="btn" onclick="celebrate()">
+            One more birthday surprise ✨
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      Made with too much love, a little stupidity, and a lot of memories. ❤️
+    </footer>
+    <button class="floating-heart" aria-label="Celebrate" onclick="celebrate()">
+      ♥
+    </button>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" onclick="closeLightbox(event)">
+      <button class="lightbox-close" aria-label="Close photo">×</button>
+      <img id="lightboxImage" src="" alt="">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+    <div class="confetti" id="confetti"></div>
+    <script>
+
+      function openLightbox(card) {
+        const image = card.querySelector("img");
+        const caption = card.querySelector("figcaption");
+        if (!image) return;
+        document.getElementById("lightboxImage").src = image.src;
+        document.getElementById("lightboxImage").alt = image.alt || "";
+        document.getElementById("lightboxCaption").textContent = caption ? caption.textContent.trim() : "";
+        document.getElementById("lightbox").classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox(event) {
+        if (event && event.target && event.target.id === "lightboxImage") return;
+        document.getElementById("lightbox").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+          document.getElementById("lightbox").classList.remove("open");
+          document.body.style.overflow = "";
+        }
+      });
+
+      function celebrate() {
+        const box = document.getElementById("confetti");
+        box.innerHTML = "";
+        const symbols = ["♥", "✦", "♡", "✿", "•"];
+        for (let i = 0; i < 70; i++) {
+          const e = document.createElement("i");
+          e.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+          e.style.left = Math.random() * 100 + "vw";
+          e.style.animationDelay = Math.random() * 1.2 + "s";
+          e.style.animationDuration = 2.5 + Math.random() * 2 + "s";
+          e.style.fontSize = 8 + Math.random() * 18 + "px";
+          e.style.color = [
+            "#ff4f78",
+            "#ff8fab",
+            "#e99aaa",
+            "#b86b7c",
+            "#8d6570",
+          ][Math.floor(Math.random() * 5)];
+          box.appendChild(e);
+        }
+        setTimeout(() => (box.innerHTML = ""), 5000);
+      }
+    </script>
+  </body>
+</html>
