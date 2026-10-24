@@ -485,7 +485,57 @@
           height: 330px;
         }
       }
-    </style>
+    
+/* DARK ROMANTIC THEME ONLY — ORIGINAL CONTENT AND LAYOUT PRESERVED */
+:root{
+  --pink:#ff6f9f;--pink-dark:#e94f82;--pink-light:#ffb6ce;
+  --cream:#fff7fb;--ink:#f9edf3;--muted:#cdbbc5;
+  --card:#21151e;--card-2:#2a1923;--line:rgba(255,166,195,.18);
+}
+html,body{background:#100b10!important;color:var(--ink)!important}
+body{
+  background:
+    radial-gradient(circle at 12% 8%,rgba(255,82,139,.13),transparent 28%),
+    radial-gradient(circle at 88% 18%,rgba(255,145,181,.09),transparent 25%),
+    linear-gradient(180deg,#100b10 0%,#160d14 45%,#0e090e 100%)!important;
+}
+header,nav,.nav,.navbar{
+  background:rgba(16,11,16,.88)!important;
+  border-color:var(--line)!important;
+  backdrop-filter:blur(14px);
+}
+section,.section,.chapter,.story-section,.content-section{background:transparent!important}
+.card,.photo-card,.story-card,.gallery-card,.memory-card,.letter,.quote,.timeline-card{
+  background:linear-gradient(145deg,rgba(42,25,35,.96),rgba(27,16,24,.96))!important;
+  color:var(--ink)!important;border-color:var(--line)!important;
+  box-shadow:0 18px 55px rgba(0,0,0,.45)!important;
+}
+h1,h2,h3,h4,h5,h6{color:#fff2f7!important}
+p,li,span{color:var(--ink)}
+.subtitle,.muted,.small,.description{color:var(--muted)!important}
+a{color:var(--pink-light)!important}
+button,.btn,.button{
+  background:linear-gradient(135deg,#ff5f92,#e84e82)!important;
+  color:#fff!important;border-color:rgba(255,255,255,.12)!important;
+  box-shadow:0 10px 30px rgba(255,78,130,.22);
+}
+.photo,.image-frame,.gallery-photo{
+  background:#1c1118!important;
+  border-color:rgba(255,166,195,.2)!important;
+  box-shadow:0 14px 38px rgba(0,0,0,.42)!important;
+}
+input,textarea,select{
+  background:#1c1118!important;color:#fff!important;border-color:var(--line)!important;
+}
+footer{background:#0b070b!important;color:var(--muted)!important;border-color:var(--line)!important}
+::selection{background:#ff5f92;color:#fff}
+.hero,.hero-section,.cover,.intro{
+  background:radial-gradient(circle at 50% 40%,rgba(255,91,145,.16),transparent 42%),transparent!important;
+}
+.heart,.floating-heart{filter:drop-shadow(0 0 10px rgba(255,91,145,.55))}
+.lightbox{background:rgba(5,3,5,.94)!important}
+
+</style>
   </head>
   <body>
     <header class="hero">
